@@ -1,4 +1,4 @@
-"""A tiny query utility. Deliberately under-validated: this is the agent's target."""
+"""A tiny query utility, deliberately under-validated. This is the agent target."""
 
 
 def parse_query(query):
