@@ -1,8 +1,9 @@
 def twoSum(nums: list[int], target: int) -> list[int]:
-    for i in range(len(nums)):
-        for j in range(i + 1, len(nums)):
-            if nums[j] == target - nums[i]:
-                return [i, j]
+    num_set = set(nums)
+    for i, num in enumerate(nums):
+        complement = target - num
+        if complement in num_set and complement != num:
+            return [i, nums.index(complement)]
     return []
 
 
