@@ -21,3 +21,12 @@ def test_rank_results_orders_by_score():
 
 def test_top_n_limits():
     assert len(top_n(RESULTS, ["python"], n=2)) == 2
+
+def test_parse_query_rejects_empty():
+    with pytest.raises(ValueError):
+        parse_query("   ")
+
+
+def test_parse_query_rejects_none():
+    with pytest.raises(TypeError):
+        parse_query(None)
