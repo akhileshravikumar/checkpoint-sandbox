@@ -3,6 +3,8 @@
 
 def parse_query(query):
     """Split a raw query string into lowercase terms."""
+    if query is None:
+        raise TypeError("Input must be a string.")
     if not isinstance(query, str):
         raise ValueError("Input must be a string.")
     return query.strip().lower().split()
