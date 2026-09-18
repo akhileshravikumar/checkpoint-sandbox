@@ -11,7 +11,13 @@ def parse_query(query):
 
 
 def rank_results(results, terms):
-    """Score each result by how many query terms appear in its title."""
+    """Score each result by how many query terms appear in its title.
+    
+    This function takes a list of results and a list of query terms. It
+    calculates the score for each result by counting how many of the query
+    terms are present in the result's title. The results are then sorted
+    in descending order based on their scores, and the top n results are
+    returned."""
     scored = []
     for r in results:
         score = sum(1 for t in terms if t in r["title"].lower())
