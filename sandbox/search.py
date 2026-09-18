@@ -11,7 +11,13 @@ def parse_query(query):
 
 
 def rank_results(results, terms):
-    """Score each result by how many query terms appear in its title."""
+    """
+    Score each result by how many query terms appear in its title.
+
+    :param results: A list of dictionaries, each representing a search result.
+    :param terms: A list of query terms to search for in the result titles.
+    :return: A list of dictionaries, each result with an additional 'score' key.
+    """
     scored = []
     for r in results:
         score = sum(1 for t in terms if t in r["title"].lower())
