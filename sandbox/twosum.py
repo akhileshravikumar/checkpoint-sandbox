@@ -11,6 +11,10 @@ def twoSum(nums: list[int], target: int) -> list[int]:
     """
     num_set = set()
     for i, num in enumerate(nums):
+        if num is None:
+            raise ValueError("Input cannot be None")
+        if num == "":
+            raise ValueError("Input cannot be an empty string")
         complement = target - num
         if complement in num_set:
             return [num_set[complement], i]
